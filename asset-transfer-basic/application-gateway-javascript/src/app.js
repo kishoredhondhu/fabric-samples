@@ -8,10 +8,10 @@ const { TextDecoder } = require('node:util');
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:4000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
@@ -93,7 +93,7 @@ app.post('/ledger/init', async (req, res) => {
         res.json({ message: 'Ledger has initialized successfully' });
     } catch (error) {
         console.error('Error initializing ledger:', error);
-        res.status(500).json({ error: 'Failed to the initialize ledger you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to the initialize ledger you can refer kishoredhondhu@gmail.com', details: error.message });
     }
 });
 
@@ -104,7 +104,7 @@ app.get('/assets', async (req, res) => {
         res.json(result);
     } catch (error) {
         console.error('Error fetching assets:', error);
-        res.status(500).json({ error: 'Failed to retrieve assets  you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to retrieve assets  you can refer kishoredhondhu@gmail.com', details: error.message });
     }
 });
 
@@ -130,7 +130,7 @@ app.post('/asset', async (req, res) => {
         res.json({ message: `Asset ${id} created successfully` });
     } catch (error) {
         console.error('Error creating asset:', error);
-        res.status(500).json({ error: 'Failed to create asset you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to create asset you can refer kishoredhondhu@gmail.com', details: error.message });
     }
 });
 
@@ -156,7 +156,7 @@ app.put('/asset', async (req, res) => {
         res.json({ message: `Asset ${id} updated successfully` });
     } catch (error) {
         console.error('Error updating asset:', error);
-        res.status(500).json({ error: 'Failed to update asset you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to update asset you can refer kishoredhondhu@gmail.com', details: error.message });
     }
 });
 
@@ -167,7 +167,7 @@ app.post('/asset/transfer', async (req, res) => {
   res.json({ message: `Successfully transferred the asset ${id} from ${oldOwner} to ${newOwner}` });
     } catch (error) {
      console.error('Error transferring asset:', error);
-        res.status(500).json({ error: 'Failed to transfer asset you can refer veerendravamsi66@gmail.com' });
+        res.status(500).json({ error: 'Failed to transfer asset you can refer kishoredhondhu@gmail.com' });
     }
 });
 
@@ -179,7 +179,7 @@ app.get('/asset/:id', async (req, res) => {
         res.json(result);
     } catch (error) {
   console.error('Error reading asset:', error);
-        res.status(500).json({ error: 'Failed to read asset you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to read asset you can refer kishoredhondhu@gmail.com', details: error.message });
     }
 });
 
@@ -191,7 +191,7 @@ app.get('/asset/:id/history', async (req, res) => {
         res.json(result);
     } catch (error) {
         console.error('Error fetching transaction history:', error);
-        res.status(500).json({ error: 'Failed to retrieve transaction history you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to retrieve transaction history you can refer kishoredhondhu@gmail.com', details: error.message });
     }
 });
 
@@ -233,3 +233,144 @@ app.listen(port, async () => {
     console.log(`Server running at http://localhost:${port}`);
     await initializeFabric();
 });
+app.get('/', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>API Server</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    max-width: 700px;
+                    margin: auto;
+                    padding: 20px;
+                    color: #333;
+                    background-color: #f9f9f9;
+                    line-height: 1.6;
+                }
+                h1 {
+                    color: #2c3e50;
+                }
+                .intro {
+                    background: #e1f5fe;
+                    padding: 15px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
+                .endpoint {
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    background: #f0f4f8;
+                    border-radius: 5px;
+                }
+                .endpoint h3 {
+                    margin: 0;
+                    color: #2980b9;
+                    display: flex;
+                    align-items: center;
+                }
+                .endpoint p {
+                    margin: 5px 0;
+                    color: #555;
+                }
+                .copy-button {
+                    margin-left: 10px;
+                    font-size: 0.9em;
+                    cursor: pointer;
+                    color: #2980b9;
+                    background: none;
+                    border: none;
+                    padding: 2px 5px;
+                }
+                .example {
+                    background: #eaf2f8;
+                    padding: 10px;
+                    border-left: 3px solid #2980b9;
+                    border-radius: 5px;
+                    font-family: monospace;
+                    color: #333;
+                }
+                footer {
+                    margin-top: 20px;
+                    text-align: center;
+                    font-size: 0.9em;
+                    color: #777;
+                }
+                footer a {
+                    color: #2980b9;
+                    text-decoration: none;
+                }
+            </style>
+            <script>
+                function copyToClipboard(text) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        alert('Copied to clipboard!');
+                    });
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Welcome to the API Server</h1>
+            <div class="intro">
+                <p><strong>Note:</strong> Use Postman or another API client to interact with the endpoints below.</p>
+                <p><strong>Last Updated:</strong> ${new Date().toLocaleString()}</p>
+            </div>
+            <h2>Available Endpoints</h2>
+            <div class="endpoint">
+                <h3>📝 POST /ledger/init</h3>
+                <p>Initializes the ledger with sample data.</p>
+                <button class="copy-button" onclick="copyToClipboard('/ledger/init')">Copy URL</button>
+            </div>
+            <div class="endpoint">
+                <h3>🔗 GET /assets</h3>
+                <p>Retrieves a list of all assets in the ledger.</p>
+                <button class="copy-button" onclick="copyToClipboard('/assets')">Copy URL</button>
+            </div>
+            <div class="endpoint">
+                <h3>📝 POST /asset</h3>
+                <p>Creates a new asset. Required fields: id, dealerId, msisdn, mpin, balance, and status.</p>
+                <div class="example">Example JSON Payload:<br>
+                    <pre>{
+    "id": "asset1",
+    "dealerId": "dealer1",
+    "msisdn": "1234567890",
+    "mpin": "1234",
+    "balance": 500,
+    "status": "active",
+    "transAmount": 0,
+    "transType": "",
+    "remarks": ""
+}</pre></div>
+                <button class="copy-button" onclick="copyToClipboard('/asset')">Copy URL</button>
+            </div>
+            <div class="endpoint">
+                <h3>🔄 PUT /asset</h3>
+                <p>Updates an existing asset with new information.</p>
+                <button class="copy-button" onclick="copyToClipboard('/asset')">Copy URL</button>
+            </div>
+            <div class="endpoint">
+                <h3>➡️ POST /asset/transfer</h3>
+                <p>Transfers an asset to a new owner. Required fields: id and newOwner.</p>
+                <button class="copy-button" onclick="copyToClipboard('/asset/transfer')">Copy URL</button>
+            </div>
+            <div class="endpoint">
+                <h3>🔍 GET /asset/:id</h3>
+                <p>Retrieves details for a specific asset by ID.</p>
+                <button class="copy-button" onclick="copyToClipboard('/asset/:id')">Copy URL</button>
+            </div>
+            <div class="endpoint">
+                <h3>📜 GET /asset/:id/history</h3>
+                <p>Fetches the transaction history for an asset.</p>
+                <button class="copy-button" onclick="copyToClipboard('/asset/:id/history')">Copy URL</button>
+            </div>
+            <footer>
+                <p>Need help? Contact: <a href="mailto:kishoredhondhu@gmail.com">kishoredhondhu@gmail.com</a></p>
+            </footer>
+        </body>
+        </html>
+    `);
+});
+
