@@ -71,8 +71,9 @@ Provides API endpoints to interact with the asset management blockchain applicat
 ### Example API Usage
 
 1.  *Initialize Ledger*: POST /ledger/init
+2.  ![ Ledger API Diagram](Screenshots/ledgerinit.png)
     
-2. *Create Asset*:
+3. *Create Asset*:
     bash
     curl -X POST http://localhost:4000/asset \
     -H "Content-Type: application/json" \
@@ -89,7 +90,6 @@ Provides API endpoints to interact with the asset management blockchain applicat
     }'
     
 
-![ Ledger API Diagram](Screenshots/ledgerinit.png)
 
 3.  *Get All Assets*: GET /assets
 ![Get Asset API Diagram](Screenshots/asset.png)
