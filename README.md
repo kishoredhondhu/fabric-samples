@@ -64,7 +64,7 @@ Provides API endpoints to interact with the asset management blockchain applicat
 - *GET* /asset/:id: Read details of a specific asset.
 - *GET* /asset/:id/history: Retrieve the transaction history of a specific asset.
 
-![API Server Diagram](Screenshots\localhost.png)
+![API Server Diagram](Screenshots/localhost.png)
 
     
 
@@ -89,10 +89,10 @@ Provides API endpoints to interact with the asset management blockchain applicat
     }'
     
 
-![ Ledger API Diagram](Screenshots\ledgerinit.png)
+![ Ledger API Diagram](Screenshots/ledgerinit.png)
 
 3.  *Get All Assets*: GET /assets
-![Get Asset API Diagram](Screenshots\asset.png)
+![Get Asset API Diagram](Screenshots/asset.png)
     
 4.  *Transfer Asset*: POST /asset/transfer
     
