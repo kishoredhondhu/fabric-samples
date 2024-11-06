@@ -20,7 +20,7 @@ class AssetTransfer extends Contract {
             MSISDN: '1234567890',
         
                 MPIN: '1234',
-              BALANCE: 300,
+              BALANCE: 315,
                 STATUS: 'active',
                 TRANSAMOUNT: 0,
                 TRANSTYPE: '',
@@ -29,9 +29,9 @@ class AssetTransfer extends Contract {
             {
                 ID: 'asset2',
                 DEALERID: 'dealer2',
-               MSISDN: '0987654321',
-                MPIN: '5678',
-                BALANCE: 400,
+               MSISDN: '0987645321',
+                MPIN: '568',
+                BALANCE: 410,
         STATUS: 'active',
                 TRANSAMOUNT: 0,
                 TRANSTYPE: '',
