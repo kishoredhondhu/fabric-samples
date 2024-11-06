@@ -92,7 +92,7 @@ Provides API endpoints to interact with the asset management blockchain applicat
 
 
 3.  *Get All Assets*: GET /assets
-![Get Asset API Diagram](Screenshots/asset.png)
+![Get Asset API Diagram](Screenshots/assest.png)
     
 4.  *Transfer Asset*: POST /asset/transfer
     
